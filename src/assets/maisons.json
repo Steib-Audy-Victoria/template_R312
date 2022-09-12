@@ -1,0 +1,16 @@
+[
+    {
+        "nom": "Beverly Springfield",
+        "prix": 5000,
+        "favori": true,
+        "image": "/public/pexels-binyamin-mellish-106399.jpg",
+        "bath": 2
+    },
+    {
+        "nom": "Beverly Heels",
+        "prix": 3600,
+        "favori": false,
+        "image": "/public/pexels-binyamin-mellish-106399.jpg",
+        "bath": 3
+    }
+]

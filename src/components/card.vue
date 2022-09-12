@@ -51,7 +51,7 @@
         </div>
         <div class="relative flex flex-grow items-center justify-center gap-2">
           <bath></bath>
-          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ bath }} Bathrooms</p>
+          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ baths }} Bathrooms</p>
         </div>
         <div class="relative flex flex-grow items-center justify-end gap-2">
           <meters></meters>
@@ -62,21 +62,19 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import bath from "./icons/bath.vue";
 import bed from "./icons/bed.vue";
 import meters from "./icons/meters.vue";
 import heart from "./icons/heart.vue";
 
-export default {
-  name: "App",
-  props: {
-    nom: String,
-    prix: Number,
-    favori: Boolean,
-    image: String,
-    bath: Number,
-  },
-  components: { bath, bed, meters, heart },
-};
+
+  defineProps ({
+    nom: { type: String, default: '...'},
+    prix: { type: Number, default: '...' },
+    favori: { type: Boolean, default: false },
+    image: { type: String,default: '...'},
+    baths: { type: Number,default: '...'},
+  })
+
 </script>
