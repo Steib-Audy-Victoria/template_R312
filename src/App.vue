@@ -29,12 +29,20 @@
           <code class="font-mono">/src/pages/liste-fetch.vue</code>
         </router-link>
       </li>
+      <li>
+        <router-link class="text-red-600 underline" to="/edit/new">
+          lien vers
+          <code class="font-mono">/src/pages/edit/new.vue</code>
+        </router-link>
+      </li>
     </ul>
   </nav>
 
 
   <!-- Affiche les pages -->
-  <router-view class="m-2 border-2 p-2" />
+  <Suspense>
+    <router-view class="m-2 border-2 p-2" />
+  </Suspense>
 </template>
 
 <script setup lang="ts">

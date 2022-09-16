@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const res = await fetch("src/assets/maisons.json")
-const maisons = await res.json()
+const res = await fetch("src/assets/maisons.json");
+const maisons = await res.json();
 
 import Card from "../components/card.vue";
 </script>
