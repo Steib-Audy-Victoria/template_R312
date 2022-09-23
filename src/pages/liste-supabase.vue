@@ -6,7 +6,7 @@ console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans
 let { data: Maison, error } = await supabase
     .from('Maison')
     .select('*')
-const maisons = Maison; // à remplacer par l'appel à Supabase
+const maisons = Maison;
 
 
 console.log("Maison", Maison)
@@ -19,7 +19,12 @@ async function upsertMaison(dataForm, node) {
 </script>
 <template>
     <h2>page liste - supabase</h2>
-    <div><Card v-for="maison in maisons" :key="maison.nomMaison" v-bind="maison" /></div>
+    <div>
+        <router-link class="text-red-600 underline" to="/edit/:id">
+            <Card v-for="maison in maisons" :key="maison.nomMaison" v-bind="maison" />
+        </router-link>
+        
+    </div>
 
     <div  class="p-2 mt-8">   
         <FormKit type="form" submit-label="Envoyer" @submit="upsertMaison" :config="{ classes: { input: 'p-1 rounded border-gray-600 shadow-sm border', label: 'text-blue-500', }}"

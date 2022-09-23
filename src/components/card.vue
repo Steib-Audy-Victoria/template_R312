@@ -61,6 +61,7 @@ import heart from "./icons/heart.vue";
 
 
 defineProps({
+  id_Maison: {type: String},
   nomMaison: { type: String, default: '...' },
   adresse: { type: String, default: '...' },
   prix: { type: Number, default: '...' },
