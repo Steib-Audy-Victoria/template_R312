@@ -23,13 +23,13 @@
             <p class="h-8 w-12 flex-shrink-0 flex-grow-0 text-left text-xs text-gray-900 opacity-50">/month</p>
           </div>
           <p class="w-56 flex-shrink-0 flex-grow-0 self-stretch text-left text-2xl font-bold text-gray-900">
-            {{ nom }}
+            {{ nomMaison }}
           </p>
         </div>
         <heart :class="{ 'fill-red-300': favori }"></heart>
       </div>
       <p class="w-72 flex-shrink-0 flex-grow-0 self-stretch text-left text-base text-gray-900 opacity-50">
-        2821 Lake Sevilla, Palm Harbor, TX
+        {{ adresse }}
       </p>
       <svg width="306" height="2" viewBox="0 0 306 2" fill="none" xmlns="http://www.w3.org/2000/svg"
         class="flex-shrink-0 flex-grow-0 self-stretch" preserveAspectRatio="xMidYMid meet">
@@ -38,15 +38,15 @@
       <div class="flex flex-shrink-0 flex-grow-0 items-start justify-start gap-4 self-stretch">
         <div class="relative flex flex-grow items-center justify-start gap-2">
           <bed></bed>
-          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">4 Beds</p>
+          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500"> {{ nbrChambres }} Beds</p>
         </div>
         <div class="relative flex flex-grow items-center justify-center gap-2">
           <bath></bath>
-          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ baths }} Bathrooms</p>
+          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ nbrSDB }} Bathrooms</p>
         </div>
         <div class="relative flex flex-grow items-center justify-end gap-2">
           <meters></meters>
-          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">6x7.5 m²</p>
+          <p class="flex-shrink-0 flex-grow-0 text-left text-xs text-gray-500">{{ surface }} m²</p>
         </div>
       </div>
     </div>
@@ -61,11 +61,14 @@ import heart from "./icons/heart.vue";
 
 
 defineProps({
-  nom: { type: String, default: '...' },
+  nomMaison: { type: String, default: '...' },
+  adresse: { type: String, default: '...' },
   prix: { type: Number, default: '...' },
   favori: { type: Boolean, default: false },
   image: { type: String, default: '/public/pexels-binyamin-mellish-106399.jpg' },
-  baths: { type: Number, default: '...' },
+  nbrSDB: { type: Number, default: '...' },
+  nbrChambres: { type: Number, default: '...' },
+  surface: { type: Number, default: '...' },
 })
 
 </script>
