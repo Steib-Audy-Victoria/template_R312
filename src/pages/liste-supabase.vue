@@ -18,22 +18,9 @@ async function upsertMaison(dataForm, node) {
 }
 </script>
 <template>
-    <h2>page liste - supabase</h2>
-    <div>
-        <router-link class="text-red-600 underline" to="/edit/:id">
-            <Card v-for="maison in maisons" :key="maison.nomMaison" v-bind="maison" />
-        </router-link>
-        
+    <h2 class="m-2">page liste - supabase</h2>
+    <div class="m-2">
+        <Card v-for="maison in maisons" :key="maison.nomMaison" v-bind="maison" />
     </div>
 
-    <div  class="p-2 mt-8">   
-        <FormKit type="form" submit-label="Envoyer" @submit="upsertMaison" :config="{ classes: { input: 'p-1 rounded border-gray-600 shadow-sm border', label: 'text-blue-500', }}"
-                :submit-attrs="{ classes: { input: 'bg-blue-500 p-1 rounded text-white' } }">
-            <FormKit name="nomMaison" label="Nom" />
-            <FormKit name="adresse" label="Adresse" />
-            <FormKit name="prix" label="Prix" type="number" />
-            <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number" />
-            <FormKit name="nbrChambres" label="Nombres de chambres" type="number" />
-        </FormKit>
-    </div>
 </template>

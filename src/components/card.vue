@@ -66,7 +66,7 @@ defineProps({
   adresse: { type: String, default: '...' },
   prix: { type: Number, default: '...' },
   favori: { type: Boolean, default: false },
-  image: { type: String, default: '/public/pexels-binyamin-mellish-106399.jpg' },
+  image: { type: String, default: '../../public/pexels-binyamin-mellish-106399.jpg' },
   nbrSDB: { type: Number, default: '...' },
   nbrChambres: { type: Number, default: '...' },
   surface: { type: Number, default: '...' },

@@ -29,6 +29,13 @@
           <code class="font-mono">/src/pages/liste-fetch.vue</code>
         </router-link>
       </li>
+      <hr class="my-2">
+      <li>
+        <router-link class="text-red-600 underline" to="/liste-supabase">
+          lien vers
+          <code class="font-mono">/src/pages/liste-supabase.vue</code>
+        </router-link>
+      </li>
       <li>
         <router-link class="text-red-600 underline" to="/edit/new">
           lien vers
@@ -36,11 +43,12 @@
         </router-link>
       </li>
       <li>
-        <router-link class="text-red-600 underline" to="/liste-supabase">
+        <router-link class="text-red-600 underline" to="/edit/[id]">
           lien vers
-          <code class="font-mono">/src/pages/liste-supabase.vue</code>
+          <code class="font-mono">/src/pages/edit/[id].vue</code>
         </router-link>
       </li>
+      <hr class="my-2">
       <li>
         <router-link class="text-red-600 underline" to="/login-logout">
           lien vers

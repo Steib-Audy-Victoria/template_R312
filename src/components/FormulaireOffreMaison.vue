@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {supabase} from "@/supabase"
-import {ref} from 'vue'
+import { supabase } from "@/supabase"
+import { ref } from 'vue'
 import Card from "./card.vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
-const maison = ref();
+const maison = ref({});
 
 const props = defineProps(["id"]);
 if (props.id) {
@@ -32,18 +32,18 @@ async function upsertMaison(dataForm, node) {
         <div class="p-2">
             <h2 class="text-2xl">Résultat (Prévisualisation)</h2>
             <!-- Optionnel on affiche les données -->
-            <Card v-for="maison in maisons" :key="maison.id_Maison" v-bind="maison" />
+            <Card v-bind="maison" />
         </div>
         <div class="p-2 mt-5">
             <!--On passe la "ref" à FormKit-->
-            <FormKit type="form" v-model="maison" submit-label="Envoyer"
+            <FormKit @submit="upsertMaison" type="form" v-model="maison" submit-label="Changer"
                 :config="{ classes: { input: 'p-1 rounded border-gray-600 shadow-sm border', label: 'text-blue-500', }}"
                 :submit-attrs="{ classes: { input: 'bg-blue-500 p-1 rounded text-white' } }">
-            <FormKit name="nomMaison" label="Nom" />
-            <FormKit name="adresse" label="Adresse" />
-            <FormKit name="prix" label="Prix" type="number" />
-            <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number" />
-            <FormKit name="nbrChambres" label="Nombres de chambres" type="number" />
+                <FormKit name="nomMaison" label="Nom" />
+                <FormKit name="adresse" label="Adresse" />
+                <FormKit name="prix" label="Prix" type="number" />
+                <FormKit name="nbrSDB" label="Nombre de salle de bain" type="number" />
+                <FormKit name="nbrChambres" label="Nombres de chambres" type="number" />
             </FormKit>
         </div>
     </div>
