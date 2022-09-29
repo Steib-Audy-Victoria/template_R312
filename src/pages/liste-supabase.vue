@@ -11,11 +11,6 @@ const maisons = Maison;
 
 console.log("Maison", Maison)
 
-
-async function upsertMaison(dataForm, node) {
-    const { data, error } = await supabase.from("Maison").upsert(dataForm);
-    if (error) node.setErrors([error.message])
-}
 </script>
 <template>
     <h2 class="m-2">page liste - supabase</h2>
