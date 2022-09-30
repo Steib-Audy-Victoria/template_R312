@@ -10,7 +10,7 @@ import {
 
 const { data, error } = await supabase.from("quartierCommune").select("*");
 
-if (error) console.log("n'a pas pu charger la view allUsers qui regroupe les code & lib quartier & commune :", error);
+if (error) console.log("n'a pas pu charger la view quartierCommune :", error);
 
 </script>
 
