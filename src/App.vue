@@ -57,7 +57,7 @@
       </li>
       <hr class="my-2">
       <li>
-        <router-link class="text-red-600 underline" to="/quartier/indexQ">
+        <router-link class="text-red-600 underline" to="/quartier">
           lien vers
           <code class="font-mono">/src/pages/quartier/index.vue</code>
         </router-link>
