@@ -55,6 +55,13 @@
           <code class="font-mono">/src/pages/login-logout.vue</code>
         </router-link>
       </li>
+      <hr class="my-2">
+      <li>
+        <router-link class="text-red-600 underline" to="/quartier/indexQ">
+          lien vers
+          <code class="font-mono">/src/pages/quartier/index.vue</code>
+        </router-link>
+      </li>
 
     </ul>
   </nav>
