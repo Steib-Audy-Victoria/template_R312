@@ -33,7 +33,9 @@ if (error) console.log("n'a pas pu charger la view allUsers qui regroupe les cod
             <DisclosureButton>{{libelle_Commune}}</DisclosureButton>
             <DisclosurePanel>
                 <ul>
-                    <li v-for="quartier in liste_Quartier" :key="quartier.code_Quartier"> {{quartier.libelle_Quartier}}</li>
+                    <li v-for="quartier in liste_Quartier" :key="quartier.code_Quartier"> 
+                    <RouterLink :to="{ name: 'quartier-id', params: { id: quartier.code_Quartier }, }">{{quartier.libelle_Quartier}}</RouterLink>
+                    </li>
                 </ul>
             </DisclosurePanel>
         </Disclosure>
