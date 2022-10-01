@@ -25,14 +25,23 @@ async function upsertQuartier(dataForm, node) {
     }
 }
 
-
+// Charger les données des communes
+const { data: listeCommune, error } = await supabase
+    .from("Commune")
+    .select("*");
+if (error) console.log("n'a pas pu charger la table Commune :", error);
+// Les convertir par `map` en un tableau d'objets {value, label} pour FormKit
+const optionsCommune = listeCommune?.map((Commune) => ({
+    value: Commune.code_Commune,
+    label: Commune.libelle_Commune,
+}));
 
 </script>
 <template>
-    <FormKit @submit="upsertQuartier" type="form" submit-label="Changer"
+    <FormKit @submit="upsertQuartier" type="form" submit-label="Envoyer"
         :config="{ classes: { input: 'p-1 rounded border-gray-600 shadow-sm border', label: 'text-blue-500', }}"
         :submit-attrs="{ classes: { input: 'bg-blue-500 p-1 rounded text-white' } }">
         <FormKit name="libelle_Quartier" label="libelle du quartier" />
-        <!--<FormKit name="libelle_Commune" label="libelle de la commune" />-->
+        <FormKit type="select" name="code_Commune" label="Commune" :options="optionsCommune" />
     </FormKit>
 </template>
